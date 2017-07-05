@@ -3,7 +3,6 @@ from pytimeparse.timeparse import timeparse
 import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt
 import Algorithmia
-import Json
 
 client = Algorithmia.client("sim0K+aJ2N+cJ+pP75A+dffnZGU1")
 
@@ -12,7 +11,7 @@ def scene_detection():
     """Extract scenes from videos and return timestamps."""
     input = {
         "video": "https://www.youtube.com/watch?v=x_EZZrIErDI&t=17s",
-        "output_collection": "testSceneDetection"
+        "output_collection": "testSceneDetection",
         "output_collection_frames": "scenecuts"
     }
     algo = client.algo('media/SceneDetection/0.1.6').set_options(timeout=600)
